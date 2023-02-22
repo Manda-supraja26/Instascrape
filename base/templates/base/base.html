@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Instascrape</title>
+</head>
+<body>
+    
+    <nav class="bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-10 lg:px-8">
+          <div class="flex justify-between h-16">
+            <div class="flex">
+              <a href="{%url 'home'%}" class="flex-shrink-0 flex items-center">
+                <img class="h-8 w-8" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
+              </a>
+              <div class="px-5 py-5 md:flex items-center ml-10">
+                <a href="{%url 'home'%}" class="text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                <a href="{%url 'about'%}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                <a href="{% url 'contact'%}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+    <div class="px-6 py-6">
+      {% block content %}
+
+    
+
+    {% endblock content%}
+
+    </div>
+    
+    <footer class="bg-gray-800 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between text-gray-400 text-sm">
+            
+
+
+            <p>&copy; 2023 My Website. All rights reserved.</p>
+            <p>Made with <span class="text-red-500">&hearts;</span> by Supraja Manda</p>
+          </div>
+        </div>
+      </footer>
+</body>
+</html>
