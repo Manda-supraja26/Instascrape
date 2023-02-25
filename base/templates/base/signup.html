@@ -1,0 +1,101 @@
+{% extends 'base/base.html' %}
+
+
+
+{% block content %}
+
+<div class="flex justify-center py-10">
+    <div class="w-full max-w-md">
+      <h1 class="text-center font-bold text-2xl mb-5">Sign up</h1>
+
+        <form action="" method="post">
+                {% csrf_token %}
+                <div class="mb-6">
+                    <label class="block bg-gray-700 font-bold mb-2" for="username"> Username</label>
+                    <input type="text" name="username" id="username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Username" value="{{form.us
+                    .value| default: ''}}">
+
+                    {% if form.username.errors  %}
+                    <p class="text-red-500 italic text-xs">{{form.username.errors|join:", "}}</p>
+                    {% endif %}
+                </div>
+
+        </form>
+
+
+
+      <form method="POST">
+        {% csrf_token %}
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="username">
+            Username
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="username" type="text" placeholder="Username" name="username"
+            value="{{ form.username.value|default:'' }}">
+          {% if form.username.errors %}
+          <p class="text-red-500 text-xs italic">{{ form.username.errors|join:", " }}</p>
+          {% endif %}
+        </div>
+
+
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="email">
+            Email
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="email" type="email" placeholder="Email" name="email"
+            value="{{ form.email.value|default:'' }}">
+          {% if form.email.errors %}
+          <p class="text-red-500 text-xs italic">{{ form.email.errors|join:", " }}</p>
+          {% endif %}
+        </div>
+
+
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="password">
+            Password
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="password" type="password" placeholder="Password" name="password">
+          {% if form.password.errors %}
+          <p class="text-red-500 text-xs italic">{{ form.password.errors|join:", " }}</p>
+          {% endif %}
+        </div>
+
+
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="password-confirm">
+            Confirm password
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="password-confirm" type="password" placeholder="Confirm password" name="password-confirm">
+          {% if form.password_confirm.errors %}
+          <p class="text-red-500 text-xs italic">{{ form.password_confirm.errors|join:", " }}</p>
+          {% endif %}
+        </div>
+
+
+        <div class="flex items-center justify-between">
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit">
+            Sign up
+          </button>
+          <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
+            href="{% url 'login' %}">
+            Already have an account?
+          </a>
+        </div>
+
+
+      </form>
+    </div>
+  </div>
+
+{% endblock content %}
+

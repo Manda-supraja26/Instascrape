@@ -1,4 +1,6 @@
 from django.shortcuts import render,HttpResponse
+# from .forms import Signup
+
 
 # Create your views here.
 
@@ -13,4 +15,9 @@ def About(request):
 def contact(request):
     return render(request,'base/contact.html')
 
+def signup(request):
+    # form = Signup()
+    return render(request,'base/signup.html')
 
+def login(request):
+    return render(request,'base/login.html')

@@ -7,9 +7,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Instascrape</title>
 </head>
-<body class="flex flex-col min-h-screen" >
+<body class="flex flex-col min-h-screen">
     
-    <nav class="bg-gray-800 ">
+    <nav class="bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-10 lg:px-8">
           <div class="flex justify-between h-16">
             <div class="flex">
@@ -17,12 +17,10 @@
                 <img class="h-8 w-8" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
               </a>
               <div class="px-5 py-5 md:flex items-center ml-10">
-                <a href="{%url 'home'%}" class="text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                <a href="{%url 'about'%}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
-                <a href="{% url 'contact'%}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
-                <a href="{% url 'signup'%}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Signup</a>
-                <a href="{% url 'login'%}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</a>
-
+                <a href="{%url 'app:home'%}" class="text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                <a href="{%url 'app:explore'%}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Explore</a>
+                <a href="{% url 'app:notification'%}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Notifications</a> 
+                <a href="{% url 'app:profile'%}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Profile</a> 
               </div>
             </div>
           </div>
@@ -38,7 +36,7 @@
 
     </div>
     
-    <footer class="bg-gray-800 py-6  mt-auto">
+    <footer class="bg-gray-800 py-6 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between text-gray-400 text-sm">
             
